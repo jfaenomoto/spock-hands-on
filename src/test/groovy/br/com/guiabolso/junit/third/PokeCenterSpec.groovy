@@ -2,7 +2,7 @@ package br.com.guiabolso.junit.third;
 
 import spock.lang.*
 
-class PokeCenterSpec extends Specification{
+class PokeCenterSpec extends Specification {
 
     def pokeCenter
 
