@@ -9,41 +9,41 @@ class PokemonProfessorSpec extends Specification {
     def 'get Bulbasaur'() {
         when:
         def pokemon = professor.getPokemon()
-        
+
         then:
         assert pokemon == "Bulbasaur"
     }
-    
+
     def 'get Squirtle'() {
         given:
         professor.getPokemon()
-        
+
         when:
         def pokemon = professor.getPokemon()
-        
+
         then:
         assert pokemon == "Squirtle"
     }
-    
+
     def 'get Charmander'() {
         given:
-        5.times {professor.getPokemon() }
-        
+        5.times { professor.getPokemon() }
+
         when:
         def pokemon = professor.getPokemon()
-        
+
         then:
         assert pokemon == "Charmander"
     }
-    
+
     def 'out of Pokemon'() {
-        given:
-        6.times {professor.getPokemon() }
-        
-        when:
+        given: "o professor dá 6 pokemons"
+        6.times { professor.getPokemon() }
+
+        when: "eu peço um pokemon para o professor"
         professor.getPokemon()
-        
-        then:
+
+        then: "acabou ;("
         def exception = thrown IllegalStateException
     }
     

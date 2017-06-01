@@ -8,7 +8,7 @@ class TypeCalculatorSpec extends Specification {
     def calculator
 
     @Unroll
-    def '#typeA is #expected on #typeB'() {
+    def '#typeA is #expected on #typeB'(def typeA, def typeB, def expected) {
         expect:
         expected == calculator.damageFromTo(typeA, typeB)
         
